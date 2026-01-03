@@ -54,10 +54,25 @@ void Sach::ghiFile(ofstream&out){
     out.write((char*)&len, sizeof(len));
     out.write(maSVMuon.c_str(), len);
 }
-void Sach::docFile(istream&in){
+void Sach::docFile(ifstream&in){
     size_t len;
     in.read((char*)&len,sizeof(len));
+     in.read((char*)&len, sizeof(len));
+    tenSach.resize(len);
+    in.read(&tenSach[0], len);
     
+    in.read((char*)&len, sizeof(len));
+    tacGia.resize(len);
+    in.read(&tacGia[0], len);
+    
+    in.read((char*)&namXuatBan, sizeof(namXuatBan));
+    in.read((char*)&dangMuon, sizeof(dangMuon));
+    
+    in.read((char*)&len, sizeof(len));
+    maSVMuon.resize(len);
+    in.read(&maSVMuon[0], len);
 }
+
+
 
 
