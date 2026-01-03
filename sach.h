@@ -4,7 +4,7 @@
 #include<fstream>
 #include <string>
 using namespace std;
-class sach
+class Sach
 {
     private:
     string maSach;
@@ -14,8 +14,8 @@ class sach
     bool dangMuon;
     string maSVMuon;
     public:
-    sach();
-    sach(string ma,string ten,string tg,int nam);
+    Sach();
+    Sach(string ma,string ten,string tg,int nam);
     // getter
     string getMaSach()const;
     string getTenSach()const;
@@ -28,11 +28,13 @@ class sach
      void setTenSach(string tg);
      void setNamXuatBan(int nam);
      void setDangMuon(bool dm);
+     void setMaSVMuon(string ma);
+
     void nhapThongTin();
     void hienThi();
 
     void ghiFile(ofstream& out);
-    void docFile(ifstream& is);
+    void docFile(ifstream& in);
 };
 
 #endif
