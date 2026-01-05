@@ -24,8 +24,8 @@ class Sach
     bool getDangMuon()const;
     string getMaSVMuon()const;
     //setter
-     void setMaSach(string ten);
-     void setTenSach(string tg);
+     void setTenSach(string ten);
+     void setTacGia(string tg);
      void setNamXuatBan(int nam);
      void setDangMuon(bool dm);
      void setMaSVMuon(string ma);
@@ -33,7 +33,7 @@ class Sach
     void nhapThongTin();
     void hienThi();
 
-    void ghiFile(ofstream& out);
+    void ghiFile(ofstream& out)const;
     void docFile(ifstream& in);
 };
 

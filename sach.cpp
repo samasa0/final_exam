@@ -8,11 +8,12 @@ string Sach::getTenSach()const{return tenSach;}
 string Sach::getTacGia()const{return tacGia;}
 int Sach::getNamXuatBan()const{return namXuatBan;}
 bool Sach::getDangMuon()const{return dangMuon;}
+string Sach::getMaSVMuon() const { return maSVMuon; }
 
-
-void Sach::setTenSach(string tg){tacGia=tg;}
-void Sach::setNamXuatBan(int nam){namXuatBan=nam;}
-void Sach::setDangMuon(bool dm){dangMuon=dm;}
+void Sach::setTenSach(string ten) { tenSach = ten; }
+void Sach::setTacGia(string tg) { tacGia = tg; }
+void Sach::setNamXuatBan(int nam) { namXuatBan = nam; }
+void Sach::setDangMuon(bool dm) { dangMuon = dm; }
 void Sach::setMaSVMuon(string ma) { maSVMuon = ma; }
 
 void Sach::nhapThongTin(){
@@ -33,7 +34,7 @@ void Sach::hienThi(){
     cout<< " | Nam XB: " << namXuatBan; 
     cout<< " | Trang thai: " << (dangMuon ? "Dang duoc muon" : "Co san"); 
 }
-void Sach::ghiFile(ofstream&out){
+void Sach::ghiFile(ofstream&out)const{
     size_t len;//đếm số lượng kí tự
     len=maSach.size();
     out.write((char*)&len,sizeof(len));// 2. Ghi độ dài (lấy địa chỉ &, ép kiểu char*)
