@@ -3,38 +3,31 @@
 #include<iostream>
 #include<fstream>
 #include <string>
+#include "tailieu.h"
 using namespace std;
-class Sach
+class Sach: public TaiLieu
 {
     private:
-    string maSach;
-    string tenSach;
     string tacGia;
-    int namXuatBan;
-    bool dangMuon;
-    string maSVMuon;
+    string theLoai;
     public:
     Sach();
-    Sach(string ma,string ten,string tg,int nam);
+    Sach(string ma,string ten,string tg,int nam,string tl);
+    virtual ~Sach();
     // getter
-    string getMaSach()const;
-    string getTenSach()const;
+    
     string getTacGia()const;
-    int getNamXuatBan()const;
-    bool getDangMuon()const;
-    string getMaSVMuon()const;
+    string getTheLoai()const;
+   
     //setter
-     void setTenSach(string ten);
+    
      void setTacGia(string tg);
-     void setNamXuatBan(int nam);
-     void setDangMuon(bool dm);
-     void setMaSVMuon(string ma);
+     void setTheLoai(string tl);
 
-    void nhapThongTin();
-    void hienThi();
-
-    void ghiFile(ofstream& out)const;
-    void docFile(ifstream& in);
+        void nhapThongTin()override;
+        void hienThi()const override;
+        void ghiFile(ofstream& out)const override;
+        void docFile(ifstream& in)override;
 };
 
 #endif
