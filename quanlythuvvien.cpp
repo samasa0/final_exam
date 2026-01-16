@@ -276,7 +276,7 @@ void quanlythuvien::traSach() {
 
 }
 void quanlythuvien::lietKeTatCaSach(){
-    cout<<" danh sach tat ca cac sach trong thu vien ";
+    cout<<" danh sach tat ca cac sach trong thu vien "<<endl;
     if(danhSachSach.empty()){
         cout<<" thu vien trong  ";
         return;
