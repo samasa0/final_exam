@@ -1,16 +1,46 @@
-#include "SinhVien.h"
+#ifndef SINHVIEN_H
+#define SINHVIEN_H
+
+#include <string>
+#include <vector>
+#include <iostream>
 #include <fstream>
-#include <cstring>
+#include "doituong.h"
+using namespace std;
 
-void themSinhVien() {
-    SinhVien sv;
-    cout << "Ma SV: "; cin >> sv.maSV;
-    cin.ignore();
-    cout << "Ten SV: "; cin.getline(sv.tenSV, 50);
-    cout << "Lop: "; cin.getline(sv.lop, 20);
-    sv.soSachDangMuon = 0;
+class SinhVien: public DoiTuong {
+private:
+    string maSV;
+    string tenSV;
+    string lop;
+    string sdt;
+    vector<string> sachDangMuon;
 
-    ofstream f("sinhvien.dat", ios::binary | ios::app);
-    f.write((char*)&sv, sizeof(SinhVien));
-    f.close();
-}
+public:
+    SinhVien();
+    SinhVien(string ma, string ten, string l, string sdt);
+    
+    // Getter
+    string getMaSV() const;
+    string getTenSV() const;
+    string getLop() const;
+    string getSDT() const;
+    vector<string> getSachDangMuon() const;
+    
+    // Setter
+    void setTenSV(string ten);
+    void setLop(string l);
+    void setSDT(string sdt);
+    
+    void themSachMuon(string maSach);
+    void xoaSachMuon(string maSach);
+    
+    void nhapThongTin();
+    void hienThi() const;
+    
+    // Đọc/ghi file nhị phân
+    void ghiFile(ofstream &out) const;
+    void docFile(ifstream &in);
+};
+
+#endif
